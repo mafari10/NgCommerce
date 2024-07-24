@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="margin">Our Collections</h1>
-    <div fxLayout="row wrap" fxLayoutGap="50px">
+    <div class="product_grid">
         @for (product of products; track product.id) {
         <mat-card appearance="outlined" class="product-card">
             <img mat-card-image src="../../../assets/images/{{product.image_url}}" [alt]="product.image_url">

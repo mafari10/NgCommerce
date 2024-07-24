@@ -13,3 +13,9 @@ mat-card {
 .margin {
   margin-bottom: -40px !important;
 }
+.product_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
