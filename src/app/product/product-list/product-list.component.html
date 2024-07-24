@@ -1,13 +1,20 @@
 <div class="container">
     <h1 class="margin">Our Collections</h1>
+    <mat-form-field class="searchfield">
+        <input matInput (keyup)="applyFilter()" type="text" name="searchTerm" [(ngModel)]="this.productName"
+            placeholder="Search">
+    </mat-form-field>
     <div class="product_grid">
-        @for (product of products; track product.id) {
+        @for (product of filteredProduct; track product.id) {
         <mat-card appearance="outlined" class="product-card">
             <img mat-card-image src="../../../assets/images/{{product.image_url}}" [alt]="product.image_url">
             <mat-card-content>
                 <mat-card-title>{{product.name}}</mat-card-title>
                 <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle>
             </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="warn" (click)="addToCart(product)">Add to cart</button>
+            </mat-card-actions>
         </mat-card>
         }
     </div>

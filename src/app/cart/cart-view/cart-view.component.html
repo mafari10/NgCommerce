@@ -1,0 +1,26 @@
+<div class="container-sm">
+    <h1>Your Cart</h1>
+    <mat-card>
+        @for (item of cartProducts; track item.id) {
+        <div class="cart-details">
+            <div class="cart-image">
+                <img mat-card-image src="../../../assets/images/{{item.image_url}}" [alt]="item.image_url">
+            </div>
+            <mat-list-item class="cart-description">
+                <mat-list-item>
+                    <p class="name">{{item.name}}</p>
+                    <p>{{item.price | currency:'EUR'}}</p>
+                </mat-list-item>
+            </mat-list-item>
+        </div>
+        }
+        <mat-list-item class="total">
+            <p matListItemTitle class="price">Total (EUR)</p>
+            <p matListItemLine>{{totalPrice | currency:'EUR'}}</p>
+        </mat-list-item>
+        <mat-card-actions class="cart-button">
+            <button mat-flat-button color="warn" (click)="clearCart()">Clear</button>
+            <button mat-raised-button color="primary" (click)="checkOut(cartProducts)">Checkout</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

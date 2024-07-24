@@ -1,7 +1,7 @@
 <mat-toolbar color="warn">
     <mat-toolbar-row>
-        <a href="/products" mat-button>Products</a>
-        <a href="/cart" mat-button>Cart</a>
+        <a [routerLink]="['/products']" mat-button>Products</a>
+        <a [routerLink]="['/cart']" mat-button>Cart<mat-icon>shopping_cart</mat-icon></a>
     </mat-toolbar-row>
 </mat-toolbar>
 
