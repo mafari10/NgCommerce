@@ -1,0 +1,15 @@
+.product-card {
+  max-width: 200px;
+  object-fit: cover;
+  margin-top: 50px;
+}
+mat-card:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}
+mat-card {
+  transition: transform 0.2s;
+}
+.margin {
+  margin-bottom: -40px !important;
+}
