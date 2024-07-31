@@ -9,11 +9,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select'
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [MatCardModule, CurrencyPipe, FlexLayoutModule, MatButtonModule, MatInputModule, FormsModule],
+  imports: [MatCardModule, CurrencyPipe, FlexLayoutModule, MatButtonModule, MatInputModule, FormsModule, MatSelectModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })
@@ -36,7 +37,7 @@ export class ProductListComponent implements OnInit {
     this.CartService.addToCart(product).subscribe({
       next: () => {
         this.snackbar.open('Product added to cart !', '', {
-          duration: 2000,
+          duration: 1000,
           horizontalPosition: 'right',
           verticalPosition: 'top',
         })
